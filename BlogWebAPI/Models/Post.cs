@@ -1,13 +1,18 @@
-﻿namespace BlogWebAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BlogWebAPI.Models
 {
 	public class Post
 	{
+		[Key]
 		public Guid Id { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
-        public DateTime PublishTime { get; set; }
+        public DateTime PublishTime { get; set; } = DateTime.Now;
 
-        public Guid UserId { get; set; }
+		[ForeignKey(nameof(UserId))]
+		public Guid UserId { get; set; }
         public User User { get; set; }
 
 		public List<Comment> Comments { get; set; }
