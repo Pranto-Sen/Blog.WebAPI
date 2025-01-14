@@ -1,9 +1,9 @@
-﻿using BlogWebAPI.Models;
+﻿using BlogWebAPI.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogWebAPI.Data
 {
-	public class BlogDbContext:DbContext
+    public class BlogDbContext:DbContext
 	{
         public BlogDbContext(DbContextOptions dbContextOptions): base(dbContextOptions) 
         {
